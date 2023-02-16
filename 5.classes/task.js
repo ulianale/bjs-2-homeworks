@@ -123,13 +123,18 @@ class Student {
   getAverage() {
     let sum = 0;
     let arr = Object.keys(this.marks);
-    for (let item of arr) {
-      sum += this.getAverageBySubject(item);
+    if (arr.length > 0) {
+      for (let item of arr) {
+        sum += this.getAverageBySubject(item);
+      }
+      return sum / arr.length;
+    } else {
+      return 0;
     }
-    return sum / arr.length;
   }
-
+   
 }
+
 
 
 
